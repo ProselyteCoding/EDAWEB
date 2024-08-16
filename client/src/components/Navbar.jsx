@@ -21,7 +21,7 @@ const Navbar = () => {
         {/*已登录时显示退出链接，否则显示登录链接*/}
         {currentUser ? (
           <span className="login_logout" onClick={logout}>
-            <Link className="link" to="/login">
+            <Link className="link" to="/">
               Logout
             </Link>
           </span>

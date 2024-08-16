@@ -25,7 +25,7 @@ const Register = () => {
     e.preventDefault();
     try {
       await axios.post("http://localhost:8800/api/auth/register", inputs);
-      navigate("/login");
+      navigate("/");
     } catch (err) {
       setError(err.response.data);
     }
@@ -55,7 +55,7 @@ const Register = () => {
           <button onClick={handelSubmit}>Register</button>
           {error && <p style={{ color: "red" }}>{error}</p>}
           <span>
-            <Link to="/login">Login the account.</Link>
+            <Link to="/">Login the account.</Link>
           </span>
         </form>
       </div>

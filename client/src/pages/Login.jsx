@@ -33,7 +33,7 @@ const Login = () => {
     try {
       await login(inputs);
       await axios.post("http://localhost:8800/api/auth/login", inputs);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       setError(err.response.data);
     }
