@@ -23,7 +23,6 @@ export const addTodo = (req, res) => {
     req.body.selected,
     req.body.overdue,
   ];
-  console.log(values);
   db.query(q, [values], (err) => {
     if (err) return res.json(err);
     return res.status(200).json("Task has been added.");
