@@ -13,11 +13,6 @@ initializeDatabase();
 
 const app = express();
 
-// 根路径重定向到 /login
-app.get("/", (req, res) => {
-  res.redirect("/login");
-});
-
 app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
