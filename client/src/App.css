@@ -1,0 +1,130 @@
+.head {
+  font-size: 50px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+.date {
+  position: relative;
+  top: 70px;
+  left: 30%;
+}
+.input {
+  position: relative;
+  top: 65px;
+  left: 30%;
+}
+.list {
+  position: relative;
+  top: 110px;
+  width: 700px;
+  left: 30%;
+}
+.input {
+  width: 700px;
+}
+.item {
+  font-size: 15px;
+}
+.delete {
+  font-size: 18px;
+}
+.add {
+  position: relative;
+  top: 110px;
+  width: 700px;
+  left: 30%;
+}
+.login_register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 73vh;
+  flex-direction: column;
+
+  form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 200px;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+
+    input {
+      padding: none;
+      border: none;
+      border-bottom: 1px solid gray;
+      font-size: 17px;
+      width: 300px;
+      display: flex;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      cursor: pointer;
+      background-color: rgb(53, 108, 42);
+      color: white;
+      border: none;
+      font-size: 16px;
+      width: 300px;
+    }
+  }
+}
+
+.Navbar {
+  height: 17vh;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.current_user {
+  background-color: #1677ff;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.none_user {
+  background-color: rgb(53, 108, 42);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.container {
+  display: flex;
+}
+.login_logout {
+  display: flex;
+  align-items: center;
+  margin-left: 17px;
+}
+.footer {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.workspace {
+  height: 73vh;
+}
+body{
+  background-image: linear-gradient(135deg,#2c3e50,#27ae60,#3c6ee3,#31222f);
+  background-size:100%;
+}

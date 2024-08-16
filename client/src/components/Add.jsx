@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../App.css";
 import { Input, Button, DatePicker, message } from "antd";
 import moment from "moment";
-import todos from "../Todos.json";
+import axios from "axios";
+import { AuthContext } from "../context/authContext";
 
 //全局变量声明报警信息
 const ERROR_MESSAGE = "请输入任务名称和截止时间";
 
-//实现输入代办名称和日期并点击“添加”按钮后添加代办
+//添加代办组件
 function Add({ listData, setListData }) {
+  //当前用户
+  const { currentUser } = useContext(AuthContext);
+
   //报警信息
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -25,16 +29,30 @@ function Add({ listData, setListData }) {
   };
 
   //点击“添加”按钮后提交数据
-  const handleOnClick = () => {
+  const handleOnClick = async (e) => {
+    e.preventDefault();
     if (inputValue && selectedDate) {
+      //创建一个newItem作为临时容器
       const newItem = {
         id: moment().valueOf(),
         task: inputValue,
         date: selectedDate,
+        uid: currentUser.id,
+        selected: false,
+        overdue: moment(selectedDate) < moment(),
       };
+      //更新listData和输入区
       setListData([...listData, newItem]);
       setInputValue(null);
       setSelectedDate(null);
+
+      //对后端进行post请求，添加代办信息到数据库
+      try {
+        await axios.post("http://localhost:8800/api/todos/add", newItem);
+        console.log("已执行发送操作");
+      } catch (err) {
+        console.log(err);
+      }
     } else {
       messageApi.open({
         type: "error",
