@@ -17,7 +17,6 @@ export const AuthContextProvider = ({ children }) => {
 
   //退出函数，重置当前用户
   const logout = async (inputs) => {
-    const res = await axios.post("/auth/logout");
     setCurrentUser(null);
   };
 

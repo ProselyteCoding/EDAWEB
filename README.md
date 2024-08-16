@@ -11,6 +11,56 @@
     - [贡献人员](#贡献人员)
 - [开源协议](#开源协议)
 
+## 项目结构
+
+```
+
+│  .gitignore
+│  LICENSE
+│  README.md
+│  
+├─backend
+│  │  db.js
+│  │  index.js
+│  │  package-lock.json
+│  │  package.json
+│  │  
+│  ├─controllers
+│  │      auth.js
+│  │      todo.js
+│  │      
+│  └─routes
+│          auth.js
+│          todos.js
+│          
+└─client
+    │  package-lock.json
+    │  package.json
+    │  
+    ├─public
+    │      favicon.ico
+    │      index.html
+    │      
+    └─src
+        │  App.css
+        │  App.jsx
+        │  index.jsx
+        │  
+        ├─components
+        │      Add.jsx
+        │      Footer.jsx
+        │      List.jsx
+        │      Navbar.jsx
+        │      
+        ├─context
+        │      authContext.js
+        │      
+        └─pages
+                Home.jsx
+                Login.jsx
+                Register.jsx
+
+```
 
 ## 安装
 
@@ -36,6 +86,15 @@ npm install
 
 3. 配置环境：在backend目录下配置.env文件，完成数据库配置。
 
+```
+# 实例
+DB_HOST=YOUR_DB_HOST
+DB_USER=YOUR_DB_USER  
+DB_PASS=YOUR_DB_PASS
+DB_NAME=YOUR_DB_NAME 
+PORT=YOUR_PORT
+```
+
 4. 启动项目：在client和backend目录下运行start命令，启动项目：
 
 ```
@@ -47,7 +106,7 @@ npm start
 4. 功能介绍：
 
 （1）前端：代办将以列表形式呈现，可输入代办名称及时间后点击‘添加’按钮添加一个代办。对已有代办可进行‘删除’和‘完成’操作，代办状态为逾期的将标红、已完成的显示为下划线划去状态、删除的从列表中移除。
-（2）后端：包含数据库和其他后端操作
+（2）后端：包含数据库和其他后端操作，可实现账户信息持续化存储。
 
 ## 相关项目
 
