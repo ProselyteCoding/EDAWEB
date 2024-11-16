@@ -22,7 +22,7 @@ export const initializeDatabase = () => {
       console.error("连接失败: " + err.stack);
       return;
     }
-    console.log("已连接到数据库，ID: " + db.threadId);
+    console.log("已连接到数据库,ID: " + db.threadId);
 
     const dropTodosTable = `DROP TABLE IF EXISTS todos`;
     const dropUsersTable = `DROP TABLE IF EXISTS users`;
